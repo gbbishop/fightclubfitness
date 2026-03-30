@@ -557,3 +557,50 @@ form button{
 .contact-page{
     background-position: center top;
 }
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    
+    /* Header & Nav: Stack them or center them */
+    header {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 0;
+    }
+
+    /* Hero Section: Reduce height so it's not a giant block */
+    .hero {
+        height: 400px;
+    }
+
+    /* Service Rows: Stack image on top of text */
+    .service-row {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .service-row img {
+        width: 100%; /* Image takes full width of container */
+        height: auto;
+    }
+
+    /* Forms: The biggest culprit for horizontal scrolling */
+    form, #contactForm, .contact-info {
+        width: 90%; /* Use percentage instead of fixed px */
+        max-width: 320px; 
+        margin: 0 auto;
+    }
+
+    /* Grid/Container spacing */
+    .services-container, .team-container, .contact-container {
+        gap: 20px;
+    }
+}
