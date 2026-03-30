@@ -1,305 +1,559 @@
-/* =========================================
-    BASE STYLES
-   ========================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; 
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:20px;
+    font-weight:bold;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-    overflow-x: hidden;
+.logo img{
+    height:50px;
 }
 
-img {
-    max-width: 100%;
-    display: block;
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+}
+/* HEADER */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:black;
+    color:white;
+    padding:15px 40px;
 }
 
-/* =========================================
-   2. HEADER & NAVIGATION
-   ========================================= */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #000;
-    color: #fff;
-    padding: 15px 5%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 20px;
-    font-weight: bold;
+nav a{
+    color:white;
+    text-decoration:none;
 }
 
-.logo img {
-    height: 50px;
-}
+/* HERO SECTION */
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
+.hero{
+    height:500px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#ffffff;
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    transition: 0.3s;
-}
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 
-nav a:hover {
-    color: #ff0000;
-}
-
-/* =========================================
-   3. HERO & SUB-HERO SECTIONS
-   ========================================= */
-.hero, .sub-hero {
-    height: 60vh;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    background-size: cover;
-    background-position: center;
-    padding: 20px;
     transition: background-image 1s ease-in-out;
 }
 
-.join-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 30px;
-    background: #ff0000;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: 0.3s;
+.hero button{
+    padding:12px 25px;
+    border:none;
+    background:rgb(0, 0, 0);
+    color:hsl(0, 0%, 100%);
+    font-size:16px;
 }
 
-.join-btn:hover {
-    background: #cc0000;
-    transform: scale(1.05);
+.join-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:black;
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    border-radius:5px;
 }
 
-/* =========================================
-   4. SERVICES & TEAM (GRID LAYOUT)
-   ========================================= */
-.services, .team-section {
-    padding: 60px 5%;
-    text-align: center;
+.join-btn:hover{
+    background:#333;
 }
 
-.services-container, .team-container {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    margin-top: 30px;
+/* SERVICES */
+
+.services{
+    padding:60px 40px;
+    text-align:center;
 }
 
-.service-card, .team-card {
-    background: #fff;
-    width: 280px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: 0.3s;
+.services-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
 }
 
-.service-card:hover, .team-card:hover {
-    transform: translateY(-10px);
+.service-card{
+    width:240px;
+    border-radius:10px;
+    overflow:hidden;
+    background:white;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    text-align:center;
 }
 
-.service-card img, .team-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+.service-card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
 }
 
-/* =========================================
-   5. SERVICE PAGE ROWS (Alternating)
-   ========================================= */
-.service-row {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    max-width: 1100px;
-    margin: 30px auto;
-    padding: 25px;
-    background: #363636;
-    color: #fff;
-    border-radius: 15px;
+.service-card h3{
+    margin:10px 0 5px;
 }
 
-.service-row img {
-    width: 450px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
+.service-card p{
+    padding:0 10px 15px;
+    font-size:14px;
 }
 
-.service-text {
-    flex: 1;
+.service-card:hover{
+    transform:translateY(-8px);
+    transition:0.3s;
 }
 
-/* =========================================
-   6. REGISTER & CONTACT PAGES (The Fix)
-   ========================================= */
-.signup-page, .contact-page {
-    position: relative;
-    min-height: 100vh;
+
+/* SCHEDULE */
+
+.schedule{
+    background:#363636;
+    color:rgb(255, 255, 255);
+    padding:40px;
+    text-align:center;
+}
+
+.schedule ul{
+    list-style-position: inside;
+    padding:0;
+}
+
+.schedule li{
+    margin:10px 0;
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+    transition:0.3s;
+}
+
+footer{
+    background:black;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* =========================
+   ABOUT PAGE
+========================= */
+
+.about-page{
+    background:rgb(255, 255, 255);
+    color:rgb(255, 255, 255);
+}
+
+.about-page p{
+    color:#ddd;
+}
+
+.sub-hero{
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    color:white;
+    text-align:center;
+    padding:120px 20px;
+
+    transition: background-image 1s ease-in-out;
+}
+.about-section{
+    text-align:center;
+    max-width:800px;
+    margin:60px auto;
+    font-size:18px;
+    line-height:1.6;
+    background:#363636;
+    color:rgb(0, 0, 0);
+    padding:40px 20px;
+    border-radius:10px;
+}
+
+.light-bg{
+    background:#363636;
+}
+
+/* TEAM SECTION */
+
+.team-section{
+    text-align:center;
+}
+
+.team-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.about-page .team-card{
+    background:#ffffff;
+    color:rgb(0, 0, 0);
+}
+
+.about-page .team-card h3{
+    color:#000000;
+}
+
+.about-page .team-card p{
+    color:#000000;
+}
+
+.team-card{
+    width:240px;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 6px 15px rgba(0,0,0,0.2);
+    text-align:center;
+    transition:0.3s;
+}
+
+.team-card:hover{
+    transform:translateY(-10px);
+}
+
+.team-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.team-card h3{
+    margin:15px 0 5px;
+}
+
+.team-card p{
+    padding:0 15px 20px;
+    font-size:14px;
+}
+
+.team-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    object-position: top;
+}
+
+.team-card h3{
+    margin:10px 0 5px;
+}
+
+.team-card p{
+    padding:0 10px 15px;
+    font-size:14px;
+}
+
+.cta-section{
+    background:#363636;
+    color:rgb(255, 255, 255);
+    text-align:center;
+    padding:60px 20px;
+}
+
+.cta-section h2{
+    margin-bottom:20px;
+}
+
+/* =========================
+   SERVICES PAGE (ALIGNED)
+========================= */
+
+.services-page{
+    padding:60px 20px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.sub-hero{
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    color:white;
+    text-align:center;
+    padding:120px 20px;
+
+    transition: background-image 1s ease-in-out;
+}
+
+/* EACH SERVICE ROW */
+
+.service-row{
+    display:flex;
+    align-items:center;
+    gap:40px;
+    margin-bottom:40px;
+    flex-wrap:wrap;
+
+    background:#363636;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(107, 107, 107, 0.3);
+
+    transition:0.3s;
+}
+
+/* IMAGE */
+
+.service-row img{
+    width:400px;
+    max-width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:10px;
+
+    transition:0.3s;
+}
+
+/* TEXT */
+
+.service-text{
+    max-width:500px;
+}
+
+.service-text h2{
+    margin-bottom:10px;
+}
+
+.service-text p{
+    margin-bottom:15px;
+    font-size:14px;
+    color:#ffffff;
+}
+
+/* HOVER EFFECTS */
+
+.service-row:hover{
+    transform:translateY(-10px);
+}
+
+.service-row img:hover{
+    transform:scale(1.05);
+}
+
+/* =========================
+   SIGNUP FORM
+========================= */
+
+
+.signup-page::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    z-index:-1;
+}
+
+.form-section{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:60px 20px;
+}
+
+form{
+    background:rgba(255, 255, 255, 0.85);
+    padding:30px;
+    border-radius:12px;
+    width:320px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+
+    backdrop-filter: blur(8px);
+    box-shadow:0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.form-logo{
+    width:80px;
+    margin:0 auto 10px;
+    display:block;
+}
+
+form input,
+form select{
+    padding:12px;
+    border:none;
+    border-radius:6px;
+    background:#222;
+    color:white;
+}
+
+form input::placeholder{
+    color:#aaa;
+}
+
+form button{
+    background:red;
+    color:white;
+    padding:12px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+form button:hover{
+    background:#cc0000;
+}
+
+form h2{
+    text-align:center;
+}
+
+form input,
+form select{
+    padding:10px;
+    border:none;
+    border-radius:5px;
+}
+
+form button{
+    margin-top:10px;
+}
+
+
+
+#errorMsg{
+    text-align:center;
+    font-size:14px;
+}
+
+.services-select{
+    text-align:left;
+    font-size:14px;
+}
+
+.services-select label{
+    display:block;
+    margin:5px 0;
+}
+
+/* =========================
+   CONTACT PAGE
+========================= */
+
+.contact-section{
+    padding:60px 20px;
+}
+
+.contact-container{
+    display:flex;
+    gap:40px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+/* INFO BOX */
+
+.contact-info,
+#contactForm{
+    background:rgba(0,0,0,0.85);
+    color:white;
+    padding:30px;
+    border-radius:12px;
+    width:320px;
+
+    backdrop-filter: blur(8px);
+    box-shadow:0 0 20px rgba(0,0,0,0.6);
+
+    transition:0.3s;
+}
+
+/* FORM */
+
+#contactForm{
+    background:#111;
+    padding:30px;
+    border-radius:10px;
+    width:300px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+#contactForm input,
+#contactForm textarea{
+    padding:10px;
+    border:none;
+    border-radius:5px;
+}
+
+#contactForm textarea{
+    height:100px;
+    resize:none;
+}
+
+#contactMsg{
+    text-align:center;
+}
+
+.contact-info:hover,
+#contactForm:hover{
+    transform:translateY(-5px);
+    transition:0.3s;
+}
+
+
+/* DARK OVERLAY */
+.contact-page::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.75);
+    z-index:-1;
+}
+
+.signup-page,
+.contact-page{
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 100px 20px;
 }
 
-/* Dark overlay that stays behind content */
-.signup-page::before, .contact-page::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 1;
+@media (max-width: 768px){
+    .signup-page,
+    .contact-page{
+        background-attachment: scroll;
+    }
 }
 
-/* Ensure content sits on top of overlay */
-.form-section, .contact-container {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 1000px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
+@media (max-width: 768px){
+    .signup-page,
+    .contact-page{
+        background-attachment: scroll;
+    }
 }
 
-form, #contactForm, .contact-info {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 35px;
-    border-radius: 15px;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-/* Contact Specific Styling */
-#contactForm, .contact-info {
-    background: #1a1a1a;
-    color: #fff;
-}
-
-form h2 { text-align: center; margin-bottom: 10px; }
-
-form input, form select, textarea {
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 15px;
-}
-
-form button {
-    background: #ff0000;
-    color: #fff;
-    border: none;
-    padding: 15px;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-/* =========================================
-   7. FOOTER
-   ========================================= */
-footer {
-    background: #000;
-    color: #fff;
-    text-align: center;
-    padding: 30px;
-}
-
-/* =========================================
-   8. MOBILE RESPONSIVENESS
-   ========================================= */
-@media (max-width: 768px) {
-    
-    header {
-        flex-direction: column;
-        padding: 15px;
-    }
-
-    /* Horizontal Nav Wrap - No vertical stacking */
-    nav ul {
-        margin-top: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    nav a {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 6px 12px;
-        border-radius: 4px;
-        font-size: 13px;
-    }
-
-    .hero {
-        height: 50vh;
-    }
-
-    /* Stack the service rows */
-    .service-row {
-        flex-direction: column;
-        text-align: center;
-        width: 90%;
-        gap: 20px;
-    }
-
-    .service-row img {
-        width: 100%;
-        height: auto;
-    }
-
-    /* Contact Page: Info box on top, Form on bottom */
-    .contact-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .signup-page, .contact-page {
-        background-attachment: scroll; /* Better performance on mobile */
-    }
-
-    form, #contactForm, .contact-info {
-        width: 100%;
-        max-width: 95%;
-    }
+.signup-page,
+.contact-page{
+    background-position: center top;
 }
