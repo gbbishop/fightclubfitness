@@ -14,7 +14,6 @@ body{
     margin:0;
     font-family:Arial, sans-serif;
 }
-
 /* HEADER */
 
 header{
@@ -30,8 +29,6 @@ nav ul{
     list-style:none;
     display:flex;
     gap:20px;
-    padding:0;
-    margin:0;
 }
 
 nav a{
@@ -122,6 +119,7 @@ nav a{
     transition:0.3s;
 }
 
+
 /* SCHEDULE */
 
 .schedule{
@@ -138,6 +136,11 @@ nav a{
 
 .schedule li{
     margin:10px 0;
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+    transition:0.3s;
 }
 
 footer{
@@ -170,7 +173,6 @@ footer{
 
     transition: background-image 1s ease-in-out;
 }
-
 .about-section{
     text-align:center;
     max-width:800px;
@@ -232,7 +234,22 @@ footer{
     width:100%;
     height:220px;
     object-fit:cover;
-    object-position:top;
+}
+
+.team-card h3{
+    margin:15px 0 5px;
+}
+
+.team-card p{
+    padding:0 15px 20px;
+    font-size:14px;
+}
+
+.team-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    object-position: top;
 }
 
 .team-card h3{
@@ -256,7 +273,7 @@ footer{
 }
 
 /* =========================
-   SERVICES PAGE
+   SERVICES PAGE (ALIGNED)
 ========================= */
 
 .services-page{
@@ -267,6 +284,17 @@ footer{
     gap:30px;
     max-width:1000px;
     margin:auto;
+}
+
+.sub-hero{
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    color:white;
+    text-align:center;
+    padding:120px 20px;
+
+    transition: background-image 1s ease-in-out;
 }
 
 /* EACH SERVICE ROW */
@@ -286,6 +314,8 @@ footer{
     transition:0.3s;
 }
 
+/* IMAGE */
+
 .service-row img{
     width:400px;
     max-width:100%;
@@ -295,6 +325,8 @@ footer{
 
     transition:0.3s;
 }
+
+/* TEXT */
 
 .service-text{
     max-width:500px;
@@ -310,6 +342,8 @@ footer{
     color:#ffffff;
 }
 
+/* HOVER EFFECTS */
+
 .service-row:hover{
     transform:translateY(-10px);
 }
@@ -319,50 +353,207 @@ footer{
 }
 
 /* =========================
-   MOBILE RESPONSIVE FIXES
+   SIGNUP FORM
 ========================= */
 
-@media (max-width:768px){
 
-    header{
-        flex-direction:column;
-        gap:15px;
-        padding:15px 20px;
+.signup-page::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    z-index:-1;
+}
+
+.form-section{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:60px 20px;
+}
+
+form{
+    background:rgba(255, 255, 255, 0.85);
+    padding:30px;
+    border-radius:12px;
+    width:320px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+
+    backdrop-filter: blur(8px);
+    box-shadow:0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.form-logo{
+    width:80px;
+    margin:0 auto 10px;
+    display:block;
+}
+
+form input,
+form select{
+    padding:12px;
+    border:none;
+    border-radius:6px;
+    background:#222;
+    color:white;
+}
+
+form input::placeholder{
+    color:#aaa;
+}
+
+form button{
+    background:red;
+    color:white;
+    padding:12px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+form button:hover{
+    background:#cc0000;
+}
+
+form h2{
+    text-align:center;
+}
+
+form input,
+form select{
+    padding:10px;
+    border:none;
+    border-radius:5px;
+}
+
+form button{
+    margin-top:10px;
+}
+
+
+
+#errorMsg{
+    text-align:center;
+    font-size:14px;
+}
+
+.services-select{
+    text-align:left;
+    font-size:14px;
+}
+
+.services-select label{
+    display:block;
+    margin:5px 0;
+}
+
+/* =========================
+   CONTACT PAGE
+========================= */
+
+.contact-section{
+    padding:60px 20px;
+}
+
+.contact-container{
+    display:flex;
+    gap:40px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+/* INFO BOX */
+
+.contact-info,
+#contactForm{
+    background:rgba(0,0,0,0.85);
+    color:white;
+    padding:30px;
+    border-radius:12px;
+    width:320px;
+
+    backdrop-filter: blur(8px);
+    box-shadow:0 0 20px rgba(0,0,0,0.6);
+
+    transition:0.3s;
+}
+
+/* FORM */
+
+#contactForm{
+    background:#111;
+    padding:30px;
+    border-radius:10px;
+    width:300px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+#contactForm input,
+#contactForm textarea{
+    padding:10px;
+    border:none;
+    border-radius:5px;
+}
+
+#contactForm textarea{
+    height:100px;
+    resize:none;
+}
+
+#contactMsg{
+    text-align:center;
+}
+
+.contact-info:hover,
+#contactForm:hover{
+    transform:translateY(-5px);
+    transition:0.3s;
+}
+
+
+/* DARK OVERLAY */
+.contact-page::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.75);
+    z-index:-1;
+}
+
+.signup-page,
+.contact-page{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+@media (max-width: 768px){
+    .signup-page,
+    .contact-page{
+        background-attachment: scroll;
     }
+}
 
-    nav ul{
-        flex-direction:column;
-        align-items:center;
-        gap:10px;
+@media (max-width: 768px){
+    .signup-page,
+    .contact-page{
+        background-attachment: scroll;
     }
+}
 
-    .hero{
-        height:400px;
-        padding:20px;
-    }
-
-    .services{
-        padding:40px 20px;
-    }
-
-    .service-card{
-        width:90%;
-        max-width:300px;
-    }
-
-    .service-row{
-        flex-direction:column;
-        text-align:center;
-    }
-
-    .service-row img{
-        width:100%;
-        height:220px;
-    }
-
-    .contact-container{
-        flex-direction:column;
-        align-items:center;
-    }
-
+.signup-page,
+.contact-page{
+    background-position: center top;
 }
